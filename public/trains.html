@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="trainstyles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Trains List</h2>
+        <div id="searchDetails"></div>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="trainTable">
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Departure</th>
+                        <th>Arrival</th>
+                        <th>Availability</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book Train</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Train Name:</strong> <span id="trainName"></span></p>
+                    <p><strong>Departure:</strong> <span id="departureTime"></span></p>
+                    <p><strong>Arrival:</strong> <span id="arrivalTime"></span></p>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="passengerName">Name</label>
+                            <input type="text" class="form-control" id="passengerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passengerAge">Age</label>
+                            <input type="number" class="form-control" id="passengerAge" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passengerGender">Gender</label>
+                            <select class="form-control" id="passengerGender" required>
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="berthPreference">Berth Preference</label>
+                            <select class="form-control" id="berthPreference" required>
+                                <option value="none">None</option>
+                                <option value="upper berth">Upper Berth</option>
+                                <option value="middle berth">Middle Berth</option>
+                                <option value="lower berth">Lower Berth</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="confirmBooking">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="trains.js"></script>
+</body>
+</html>
